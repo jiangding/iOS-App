@@ -1,0 +1,111 @@
+//
+//  PrefixHeader.pch
+//  丁丁说
+//
+//  Created by JiangDing on 15/11/20.
+//  Copyright © 2015年 JiangDing. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import "UIView+Frame.h"
+#import "UIBarButtonItem+Icon.h"
+#import "UIImage+Extension.h"
+
+// ...表示宏定义的可变参数
+// __VA_ARGS__:表示函数里面的可变参数
+#ifdef DEBUG // 调试
+
+#define JDLog(...) NSLog(__VA_ARGS__)
+
+#else // 发布
+
+#define JDLog(...)
+
+#endif
+
+// 颜色
+#define JDColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+// 全局背景颜色
+#define JDGlobColor JDColor(240, 240, 240)
+// 随机色
+#define JDRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
+
+#define JDTitleFont [UIFont boldSystemFontOfSize:18.0]
+
+// 应用信息
+#define AppKey @"2358055608"
+#define AppSecret @"23b1e1bf341e71a8496706f472a67cf7"
+#define APPRedirectURI @"http://www.baidu.com"
+
+
+#define JDScreenWidth [UIScreen mainScreen].bounds.size.width
+
+// 首页cell
+#define JDMarin10 10
+#define JDMarin5 5
+#define JDFont18 [UIFont systemFontOfSize:18.0]
+#define JDFont17 [UIFont systemFontOfSize:17.0]
+#define JDFont16 [UIFont systemFontOfSize:16.0]
+#define JDFont13 [UIFont systemFontOfSize:13.0]
+#define JDFont12 [UIFont systemFontOfSize:12.0]
+// 微博姓名字体
+#define JDStatusNameFont [UIFont systemFontOfSize:15.0]
+// 微博正文字体
+#define JDStatusTextFont [UIFont systemFontOfSize:15.0]
+// 微博toolBar字体
+#define JDStatusToolFont [UIFont systemFontOfSize:13.0]
+// 微博时间字体
+#define JDStatusTimeFont [UIFont systemFontOfSize:12.0]
+// 微博来源字体
+#define JDStatusSourceFont JDStatusTimeFont
+// 微博Link模型
+#define JDLink @"link"
+// 首页点击发送通知
+#define JDHomeStatusTitleNotifcation @"JDHomeStatusTitleNotifcation"
+#define JDHomeStatusTitleInfo @"JDHomeStatusTitleInfo"
+
+// 点击@ # http 字发出通知
+#define JDLinkDidSelectedNotification @"JDLinkDidSelectedNotification"
+#define JDLinkText @"JDLinkText"
+// 首页点击评论通知
+#define JDStatusCommentClickNotification @"JDStatusCommentClickNotification"
+#define JDStatusCommentClickZeroNotification @"JDStatusCommentClickZeroNotification"
+// @ # 颜色
+#define JDStatusHightColor JDColor(44, 188, 288)
+
+// 首页评论字体
+#define JDCommentTitleFont [UIFont systemFontOfSize:13.0]
+#define JDCommentTimeFont [UIFont systemFontOfSize:11.0]
+#define JDCommentTextFont [UIFont systemFontOfSize:13.0]
+
+
+// emotion:
+// 每页最大个数
+#define JDEmotionPerPageMaxCount 20
+// 每行多少
+#define JDEmotionPerColsCount 7
+// 每列多少
+#define JDEmotionPerRowsCount 3
+// 长按emotion发送通知名称
+#define JDLongPressDidSelectedNotification @"JDLongPressDidSelectedNotification"
+#define JDLongPressSelectedEmotion @"JDLongPressSelectedEmotion"
+// 删除icon发送通知
+#define JDLongPressDidDeleteNotification @"JDLongPressDidDeleteNotification"
+#define JDLongPressDeleteEmotion @"JDLongPressDeleteEmotion"
+
+
+// 我的
+#define JDProfileNotificationWGF @"JDProfileNotificationWGF"
+#define JDProfileWGF @"JDProfileWGF"
+#define JDProfileNotificationPersonCenter @"JDProfileNotificationPersonCenter"
+
+// 发微博
+// @ 选中通知
+#define JDMentionNotification @"JDMentionNotification"
+#define JDMentionInfo @"JDMentionInfo"
+
+
+#endif /* PrefixHeader_pch */
